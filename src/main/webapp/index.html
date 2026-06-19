@@ -4,10 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevOps Kubernetes Deployment</title>
+<title>FoodExpress</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -16,219 +15,205 @@
 }
 
 body{
-    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#2563eb,#06b6d4);
-    background-size:400% 400%;
-    animation:gradient 12s ease infinite;
-    min-height:100vh;
-    color:white;
-}
-
-@keyframes gradient{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    background:#f8f8f8;
 }
 
 header{
-    text-align:center;
-    padding:60px 20px;
+    background:#fc8019;
+    color:white;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-header h1{
-    font-size:4rem;
-    margin-bottom:15px;
-    text-shadow:2px 2px 10px rgba(0,0,0,0.4);
-}
-
-header p{
-    font-size:1.3rem;
-}
-
-.status{
-    margin-top:25px;
-    display:inline-block;
-    background:#22c55e;
-    padding:12px 25px;
-    border-radius:30px;
+.logo{
+    font-size:32px;
     font-weight:bold;
-    font-size:18px;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+}
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+    background-size:cover;
+    background-position:center;
+    height:500px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+.search-box{
+    margin-top:30px;
+}
+
+.search-box input{
+    padding:15px;
+    width:350px;
+    border:none;
+    border-radius:5px;
+}
+
+.search-box button{
+    padding:15px 25px;
+    border:none;
+    background:#fc8019;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.section-title{
+    text-align:center;
+    margin:50px 0 30px;
+    color:#333;
 }
 
 .cards{
+    width:90%;
+    margin:auto;
+
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
-    margin-top:40px;
 }
 
 .card{
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(12px);
-    border-radius:20px;
-    padding:30px;
-    transition:0.4s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
-.card h2{
-    margin-bottom:15px;
-    color:#facc15;
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
 }
 
 .card p{
-    line-height:1.6;
+    color:gray;
 }
 
-.tech-stack{
-    margin-top:60px;
-    text-align:center;
-}
-
-.tech-stack h2{
-    margin-bottom:25px;
-}
-
-.tech{
-    display:inline-block;
-    padding:12px 22px;
-    margin:8px;
-    background:#1d4ed8;
-    border-radius:25px;
+.offer{
+    color:green;
     font-weight:bold;
-}
-
-.workflow{
-    margin-top:60px;
-    text-align:center;
-}
-
-.workflow h2{
-    margin-bottom:25px;
-}
-
-.flow{
-    font-size:20px;
-    line-height:2;
+    margin-top:10px;
 }
 
 footer{
-    margin-top:70px;
+    margin-top:50px;
+    background:#222;
+    color:white;
     text-align:center;
     padding:25px;
-    background:rgba(0,0,0,0.2);
 }
-
-footer h3{
-    color:#facc15;
-}
-
 </style>
 
 </head>
-
 <body>
 
 <header>
+    <div class="logo">🍔 FoodExpress</div>
 
 ```
-<h1>🚀 DevOps Deployment Project</h1>
-
-<p>
-    Maven Web Application Containerized with Docker and
-    Deployed on Kubernetes Running on AWS EC2
-</p>
-
-<div class="status">
-    ✅ Application Running Successfully
-</div>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Restaurants</a>
+    <a href="#">Offers</a>
+    <a href="#">Cart</a>
+</nav>
 ```
 
 </header>
 
-<div class="container">
+<section class="hero">
 
 ```
+<h1>Order Food Online</h1>
+
+<p>Fast Delivery | Best Restaurants | Great Offers</p>
+
+<div class="search-box">
+    <input type="text" placeholder="Enter your location">
+    <button>Search</button>
+</div>
+```
+
+</section>
+
+<h2 class="section-title">Popular Restaurants</h2>
+
 <div class="cards">
 
-    <div class="card">
-        <h2>📦 GitHub</h2>
-        <p>
-            Source code managed and version controlled using Git and GitHub.
-        </p>
+```
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+    <div class="card-content">
+        <h3>Burger Hub</h3>
+        <p>Burgers • Fast Food</p>
+        <div class="offer">30% OFF</div>
     </div>
-
-    <div class="card">
-        <h2>🐳 Docker</h2>
-        <p>
-            Application packaged into a Docker image for consistent deployment.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>☁ AWS EC2</h2>
-        <p>
-            Ubuntu EC2 instance used to host Docker and Kubernetes cluster.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>⚙ Kubernetes</h2>
-        <p>
-            Application deployed using Namespace, Deployment and Service resources.
-        </p>
-    </div>
-
 </div>
 
-<div class="tech-stack">
-
-    <h2>🛠 Technology Stack</h2>
-
-    <span class="tech">HTML</span>
-    <span class="tech">Maven</span>
-    <span class="tech">Git</span>
-    <span class="tech">GitHub</span>
-    <span class="tech">Docker</span>
-    <span class="tech">Docker Hub</span>
-    <span class="tech">AWS EC2</span>
-    <span class="tech">Kubernetes</span>
-    <span class="tech">Ubuntu</span>
-
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591">
+    <div class="card-content">
+        <h3>Pizza World</h3>
+        <p>Pizza • Italian</p>
+        <div class="offer">40% OFF</div>
+    </div>
 </div>
 
-<div class="workflow">
-
-    <h2>🔄 Deployment Workflow</h2>
-
-    <div class="flow">
-        Local Development ➜ GitHub ➜ Docker Build ➜ Docker Hub ➜ AWS EC2 ➜ Kubernetes ➜ Production Deployment
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+    <div class="card-content">
+        <h3>Indian Spice</h3>
+        <p>Biryani • Meals</p>
+        <div class="offer">20% OFF</div>
     </div>
-
 </div>
 ```
 
 </div>
 
 <footer>
-
-```
-<h3>Developed by Rakshitha M R</h3>
-
-<p>
-    End-to-End DevOps Project Demonstration
-</p>
-```
-
+    <h3>FoodExpress</h3>
+    <p>Powered by Docker • Kubernetes • AWS EC2</p>
 </footer>
 
 </body>
